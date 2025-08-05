@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pholani - Pascal IDE for Mac</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>🎓 Pholani Pascal IDE</h1>
+                <span class="subtitle">Learn Pascal Programming on Mac</span>
+            </div>
+            <div class="header-right">
+                <div class="compiler-status" id="compilerStatus">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Checking compiler...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <button class="btn btn-primary" id="runBtn">
+                    <span class="btn-icon">▶️</span>
+                    Run Code
+                </button>
+                <button class="btn btn-secondary" id="saveBtn">
+                    <span class="btn-icon">💾</span>
+                    Save
+                </button>
+                <button class="btn btn-secondary" id="loadBtn">
+                    <span class="btn-icon">📂</span>
+                    Load
+                </button>
+                <button class="btn btn-secondary" id="newBtn">
+                    <span class="btn-icon">📄</span>
+                    New
+                </button>
+            </div>
+            <div class="toolbar-right">
+                <input type="text" id="filename" placeholder="program.pas" class="filename-input">
+                <button class="btn btn-info" id="examplesBtn">
+                    <span class="btn-icon">📚</span>
+                    Examples
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Code Editor -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h3>📝 Pascal Code Editor</h3>
+                    <div class="editor-info">
+                        <span id="lineCol">Line 1, Col 1</span>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <textarea id="codeEditor"></textarea>
+                </div>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="output-panel">
+                <div class="panel-header">
+                    <h3>🖥️ Program Output</h3>
+                    <button class="btn btn-small" id="clearOutputBtn">Clear</button>
+                </div>
+                <div class="output-container">
+                    <div class="output-section">
+                        <h4>Compilation:</h4>
+                        <pre id="compilationOutput" class="output-text compilation-output"></pre>
+                    </div>
+                    <div class="output-section">
+                        <h4>Program Output:</h4>
+                        <pre id="programOutput" class="output-text program-output"></pre>
+                    </div>
+                    <div class="output-section">
+                        <h4>Errors:</h4>
+                        <pre id="errorOutput" class="output-text error-output"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Manager Modal -->
+        <div id="fileModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>📁 Saved Files</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="fileList" class="file-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Examples Modal -->
+        <div id="examplesModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>📚 Pascal Examples</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="examplesList" class="examples-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="spinner"></div>
+            <p>Compiling and running your Pascal program...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/pascal/pascal.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

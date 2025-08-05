@@ -1,0 +1,19 @@
+{
+  "name": "pholani",
+  "version": "1.0.0",
+  "description": "A web-based Pascal/Delphi IDE for macOS - Educational tool for high school students",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["pascal", "delphi", "ide", "education", "compiler", "macos"],
+  "author": "Pascal IDE Developer",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}
