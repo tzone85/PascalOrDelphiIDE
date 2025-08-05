@@ -188,6 +188,7 @@ app.get('/api/files', async (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🎓 Pascal IDE Server running on http://localhost:${PORT}`);
-  console.log('📝 Open your browser to start coding in Pascal!');
+  console.log(`🎓 Pholani Pascal IDE is ready to welcome students on http://localhost:${PORT}`);
+  console.log('✨ Your friendly coding companion is waiting for you in the browser!');
+  console.log('💫 Every great programmer started with their first "Hello, World!" - yours is next!');
 });

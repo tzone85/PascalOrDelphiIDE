@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pholani - Pascal IDE for Mac</title>
+    <title>Pholani - Your Pascal Programming Journey</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -13,13 +13,13 @@
         <!-- Header -->
         <header class="header">
             <div class="header-left">
-                <h1>🎓 Pholani Pascal IDE</h1>
-                <span class="subtitle">Learn Pascal Programming on Mac</span>
+                <h1>🎓 Welcome to Pholani!</h1>
+                <span class="subtitle">Your friendly Pascal programming companion</span>
             </div>
             <div class="header-right">
                 <div class="compiler-status" id="compilerStatus">
                     <span class="status-dot"></span>
-                    <span class="status-text">Checking compiler...</span>
+                    <span class="status-text">Setting up your coding environment...</span>
                 </div>
             </div>
         </header>
@@ -27,28 +27,28 @@
         <!-- Toolbar -->
         <div class="toolbar">
             <div class="toolbar-left">
-                <button class="btn btn-primary" id="runBtn">
-                    <span class="btn-icon">▶️</span>
-                    Run Code
+                <button class="btn btn-primary" id="runBtn" title="Let's see your code in action! (F5)">
+                    <span class="btn-icon">🚀</span>
+                    Run My Code
                 </button>
-                <button class="btn btn-secondary" id="saveBtn">
+                <button class="btn btn-secondary" id="saveBtn" title="Keep your masterpiece safe">
                     <span class="btn-icon">💾</span>
                     Save
                 </button>
-                <button class="btn btn-secondary" id="loadBtn">
+                <button class="btn btn-secondary" id="loadBtn" title="Open a saved project">
                     <span class="btn-icon">📂</span>
-                    Load
+                    Open
                 </button>
-                <button class="btn btn-secondary" id="newBtn">
-                    <span class="btn-icon">📄</span>
-                    New
+                <button class="btn btn-secondary" id="newBtn" title="Start fresh with a new project">
+                    <span class="btn-icon">✨</span>
+                    New Project
                 </button>
             </div>
             <div class="toolbar-right">
-                <input type="text" id="filename" placeholder="program.pas" class="filename-input">
-                <button class="btn btn-info" id="examplesBtn">
-                    <span class="btn-icon">📚</span>
-                    Examples
+                <input type="text" id="filename" placeholder="my-awesome-program.pas" class="filename-input">
+                <button class="btn btn-info" id="examplesBtn" title="Get inspired with ready-made examples!">
+                    <span class="btn-icon">🎯</span>
+                    Try Examples
                 </button>
             </div>
         </div>
@@ -58,34 +58,42 @@
             <!-- Code Editor -->
             <div class="editor-panel">
                 <div class="panel-header">
-                    <h3>📝 Pascal Code Editor</h3>
+                    <h3>✍️ Your Code Workspace</h3>
                     <div class="editor-info">
                         <span id="lineCol">Line 1, Col 1</span>
+                        <small style="margin-left: 10px; color: #666;">💡 Pro tip: Press F5 to run your code!</small>
                     </div>
                 </div>
                 <div class="editor-container">
-                    <textarea id="codeEditor"></textarea>
+                    <textarea id="codeEditor" placeholder="Start typing your Pascal code here... 
+                    
+Ready for your first program? Try this:
+
+program HelloWorld;
+begin
+  writeln('Hello, amazing programmer!');
+end."></textarea>
                 </div>
             </div>
 
             <!-- Output Panel -->
             <div class="output-panel">
                 <div class="panel-header">
-                    <h3>🖥️ Program Output</h3>
-                    <button class="btn btn-small" id="clearOutputBtn">Clear</button>
+                    <h3>� See Your Code Come to Life</h3>
+                    <button class="btn btn-small" id="clearOutputBtn" title="Start fresh">✨ Clear</button>
                 </div>
                 <div class="output-container">
                     <div class="output-section">
-                        <h4>Compilation:</h4>
-                        <pre id="compilationOutput" class="output-text compilation-output"></pre>
+                        <h4>🔧 Compilation Status:</h4>
+                        <pre id="compilationOutput" class="output-text compilation-output">Ready to compile your amazing code! Hit the 🚀 Run button when you're ready.</pre>
                     </div>
                     <div class="output-section">
-                        <h4>Program Output:</h4>
-                        <pre id="programOutput" class="output-text program-output"></pre>
+                        <h4>🎉 Your Program's Output:</h4>
+                        <pre id="programOutput" class="output-text program-output">Your program's results will appear here like magic! ✨</pre>
                     </div>
                     <div class="output-section">
-                        <h4>Errors:</h4>
-                        <pre id="errorOutput" class="output-text error-output"></pre>
+                        <h4>🤝 Helpful Messages:</h4>
+                        <pre id="errorOutput" class="output-text error-output">Don't worry - if something needs fixing, we'll help you figure it out together! 💪</pre>
                     </div>
                 </div>
             </div>

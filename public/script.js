@@ -100,7 +100,7 @@ class PascalIDE {
 
     showCompilerError(message) {
         document.getElementById('errorOutput').textContent = 
-            `⚠️ ${message}\n\nTo install Free Pascal Compiler on macOS:\n1. Install Homebrew if you haven't: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"\n2. Run: brew install fpc\n3. Restart this IDE`;
+            `🤗 Hey there! ${message}\n\nDon't worry - this is easy to fix! To get Free Pascal Compiler working on your Mac:\n1. First, let's get Homebrew (if you don't have it): /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"\n2. Then install the compiler: brew install fpc\n3. Restart Pholani and you'll be coding in no time! 🚀\n\nNeed help? Ask your teacher - they've got your back!`;
     }
 
     async runCode() {
@@ -111,7 +111,7 @@ class PascalIDE {
 
         const code = this.editor.getValue();
         if (!code.trim()) {
-            document.getElementById('errorOutput').textContent = 'Please enter some Pascal code first.';
+            document.getElementById('errorOutput').textContent = '💡 Ready to code? Just type some Pascal code above and hit Run when you\'re ready to see the magic happen!';
             return;
         }
 
@@ -134,7 +134,7 @@ class PascalIDE {
             this.displayResults(result);
         } catch (error) {
             document.getElementById('errorOutput').textContent = 
-                'Network error: Unable to compile code. Please check your connection.';
+                '🌐 Oops! Having trouble connecting to the compiler. Check your internet connection and try again. You\'ve got this! 💪';
         } finally {
             this.showLoading(false);
         }
@@ -146,13 +146,13 @@ class PascalIDE {
         const errorOutput = document.getElementById('errorOutput');
 
         if (result.success) {
-            compilationOutput.textContent = result.compilationOutput || '✅ Compilation successful!';
-            programOutput.textContent = result.output || '(No output produced)';
+            compilationOutput.textContent = result.compilationOutput || '🎉 Amazing! Your code compiled perfectly!';
+            programOutput.textContent = result.output || '📝 Your program ran, but didn\'t produce any output (that\'s totally okay!)';
             errorOutput.textContent = result.error || '';
         } else {
-            compilationOutput.textContent = '❌ Compilation failed';
+            compilationOutput.textContent = '🔧 Let\'s fix this together - your code needs a small adjustment';
             programOutput.textContent = '';
-            errorOutput.textContent = result.error || 'Unknown compilation error';
+            errorOutput.textContent = result.error || '🤔 Something unexpected happened - let\'s troubleshoot this!';
         }
     }
 
@@ -174,12 +174,12 @@ class PascalIDE {
 
             const result = await response.json();
             if (result.success) {
-                document.getElementById('compilationOutput').textContent = `💾 File saved as ${filename}`;
+                document.getElementById('compilationOutput').textContent = `💾 Great job! Your masterpiece is saved as ${filename} and ready for later! ✨`;
             } else {
-                document.getElementById('errorOutput').textContent = `Failed to save file: ${result.error}`;
+                document.getElementById('errorOutput').textContent = `😕 Hmm, couldn't save your file: ${result.error}. Don't worry, your code is still safe in the editor!`;
             }
         } catch (error) {
-            document.getElementById('errorOutput').textContent = 'Network error: Unable to save file.';
+            document.getElementById('errorOutput').textContent = '🌐 Having trouble saving right now. Your code is still safe - just try again in a moment!';
         }
     }
 
@@ -219,12 +219,12 @@ class PascalIDE {
                 document.getElementById('filename').value = filename;
                 this.currentFilename = filename;
                 document.getElementById('fileModal').style.display = 'none';
-                document.getElementById('compilationOutput').textContent = `📂 Loaded ${filename}`;
+                document.getElementById('compilationOutput').textContent = `🎯 Welcome back! ${filename} is loaded and ready to go!`;
             } else {
-                document.getElementById('errorOutput').textContent = `Failed to load file: ${result.error}`;
+                document.getElementById('errorOutput').textContent = `😔 Couldn't load ${filename}: ${result.error}. No worries - try again or choose another file!`;
             }
         } catch (error) {
-            document.getElementById('errorOutput').textContent = 'Network error: Unable to load file.';
+            document.getElementById('errorOutput').textContent = '🌐 Having trouble loading files right now. Check your connection and give it another try!';
         }
     }
 
@@ -233,7 +233,7 @@ class PascalIDE {
         document.getElementById('filename').value = 'program.pas';
         this.currentFilename = 'program.pas';
         this.clearOutput();
-        document.getElementById('compilationOutput').textContent = '📄 New file created';
+        document.getElementById('compilationOutput').textContent = '✨ Fresh start! Your new file is ready for your amazing ideas!';
     }
 
     showExamplesModal() {
